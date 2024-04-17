@@ -117,19 +117,25 @@ options.forEach(option => {
 dealtCardsContainer.addEventListener('mousemove', function(e) {
     const dealtCards = dealtCardsContainer.querySelectorAll('.dealt-card');
     dealtCards.forEach(card => {
-        const rect = card.getBoundingClientRect();
-        const centerX = rect.left + rect.width / 2;
-        const centerY = rect.top + rect.height / 2;
-        const mouseX = e.clientX - centerX;
-        const mouseY = e.clientY - centerY;
+        if (!card.classList.contains('enlarged')) {
+            const rect = card.getBoundingClientRect();
+            const centerX = rect.left + rect.width / 2;
+            const centerY = rect.top + rect.height / 2;
+            const mouseX = e.clientX - centerX;
+            const mouseY = e.clientY - centerY;
 
-        if (mouseX >= -rect.width / 2 && mouseX <= rect.width / 2 && mouseY >= -rect.height / 2 && mouseY <= rect.height / 2) {
-            const rotateX = (mouseY / rect.height) * -20;
-            const rotateY = (mouseX / rect.width) * 20;
-            card.style.transition = 'transform 0.3s';
-            card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
-        } else {
-            card.style.transition = 'transform 0.5s';
+            if (mouseX >= -rect.width / 2 && mouseX <= rect.width / 2 && mouseY >= -rect.height / 2 && mouseY <= rect.height / 2) {
+                const rotateX = (mouseY / rect.height) * -25;
+                const rotateY = (mouseX / rect.width) * 25;
+                card.style.transition = 'transform 0.2s';
+                card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+            } else {
+                card.style.transition = 'transform 1s';
+                card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0)';
+            }
+        }
+        else{
+            card.style.transition = 'transform 0.1s';
             card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0)';
         }
     });
@@ -141,4 +147,11 @@ dealtCardsContainer.addEventListener('mouseleave', function() {
         card.style.transition = 'transform 0.5s';
         card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0)';
     });
+});
+
+dealtCardsContainer.addEventListener('click', function(e) {
+    const clickedCard = e.target.closest('.dealt-card');
+    if (clickedCard) {
+        clickedCard.classList.toggle('enlarged');
+    }
 });

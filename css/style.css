@@ -45,6 +45,7 @@ h1 {
   font-size: 2vw;
   font-weight: 700;
   margin-bottom: 10px;
+  line-height: 1.5;
 }
 
 p {
@@ -120,8 +121,9 @@ h4 {
   grid-column: 1 / span 5;
   grid-row: 2/ span 5;
   display: grid;
-  grid-template-columns: repeat(5, 250px);
-  gap: 5vh;
+  grid-template-columns: repeat(5, 240px);
+  gap: 2.5vh;
+  margin: 0 10vh;
 }
 
 @keyframes shuffle {
@@ -191,16 +193,17 @@ h4 {
 .portfolio-cards {
   display: none;
   flex-wrap: wrap;
+  height: 300px;
   background-color: #fff;
   border-radius: 10px;
-  /* box-shadow: 8px 9px 8px rgba(0, 0, 0, 0.2); */
+  box-shadow: 4px 2px 5px rgba(0, 0, 0, 0.2);
   padding: 20px;
   transition: transform 1s;
   margin-bottom: 20px;
   text-align: center;
 }
 
-.portfolio-cards img {
+.portfolio-cards.logo {
   width: 150px;
   border-radius: 10px;
   margin-bottom: 10px;
@@ -216,23 +219,28 @@ h4 {
   animation: shuffle 2s forwards;
 }
 
-.dealt-card {
-  position: relative;
-  height: 300px;
-  border-radius: 10px;
-  cursor: pointer;
-  background-color: #fff;
-  border-radius: 10px;
-  box-shadow: 4px 2px 5px rgba(0, 0, 0, 0.2);
-  padding: 20px;
-  transition: transform 0.5s;
+
+
+.portfolio-cards h3,
+.portfolio-cards h4,
+.portfolio-cards p {
+  display: block;
+}
+
+.portfolio-cards.enlarged {
+  position: fixed;
+  height: 85%;
+  width: 40%;
+  top: 5%;
+  right: 30%;
+  z-index: 9999;
   overflow: auto;
 }
 
-.dealt-card .text {
-  font-size: 18px;
-  font-weight: bold;
-  padding: 20px;
+.portfolio-cards.enlarged:hover {
+  transform: none;
+  scale: none;
+  box-shadow: 4px 2px 5px rgba(0, 0, 0, 0.2);
 }
 
 .options .not-selected {
