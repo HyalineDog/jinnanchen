@@ -65,6 +65,24 @@ function dealCards(selectedClass) {
     });
 }
 
+function returnCards() {
+    const dealtCards = document.querySelectorAll('.dealt-card');
+    const originalCardRect = originalCard.getBoundingClientRect();
+    const originalCardLeft = originalCardRect.left;
+    const originalCardTop = originalCardRect.top;
+
+    dealtCards.forEach((card, index) => {
+        setTimeout(() => {
+            card.style.transition = 'transform 0.5s';
+            card.style.transform = `translate(${originalCardLeft - card.offsetLeft}px, ${originalCardTop - card.offsetTop}px) scale(0.01)`;
+
+            setTimeout(() => {
+                card.remove();
+            }, 500);
+        }, index * 100);
+    });
+}
+
 function applyAutoHoverEffect(card) {
     const rect = card.getBoundingClientRect();
     const centerX = rect.left + rect.width / 2;
@@ -89,7 +107,16 @@ originalCard.addEventListener('click', function() {
         originalCard.classList.remove('animate');
     }, 500);
 
-    dealCards(selectedClass);
+    const dealtCards = dealtCardsContainer.querySelectorAll('.dealt-card');
+    dealtCards.forEach(card => {
+        card.style.transition = 'transform 0.5s';
+        card.style.transform = 'scale(0)';
+    });
+
+    setTimeout(() => {
+        dealtCardsContainer.innerHTML = '';
+        dealCards(selectedClass);
+    }, 500);
 });
 
 options.forEach(option => {
@@ -103,19 +130,9 @@ options.forEach(option => {
         dropDownOptions.style.animationName = 'fade_reverse, slide_reverse';
         search.style = 'border-bottom: black 3px solid';
 
-        const dealtCards = dealtCardsContainer.querySelectorAll('.dealt-card');
-        dealtCards.forEach(card => {
-            card.style.transition = 'transform 0.5s';
-            card.style.transform = 'scale(0)';
-        });
-
-        setTimeout(() => {
-            dealtCardsContainer.innerHTML = '';
-            dealCards(selectedClass);
-        }, 500);
+        returnCards();
     });
 });
-
 
 dealtCardsContainer.addEventListener('mousemove', function(e) {
     const dealtCards = dealtCardsContainer.querySelectorAll('.dealt-card');
