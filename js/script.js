@@ -40,11 +40,14 @@ function dealCards(selectedClass) {
             const originalCardTop = originalCardRect.top;
 
             dealtCard.style.backgroundImage = `url(${originalCard.src})`;
-            dealtCard.style.transform = `translateX(${originalCardLeft}px) translateY(${originalCardTop}px) scale(0.5)`;
+            dealtCard.style.backgroundSize = 'cover';
+            dealtCard.style.backgroundPosition = 'center';
+            dealtCard.style.backgroundRepeat = 'no-repeat';
+            dealtCard.style.transform = `translateX(${originalCardLeft}px) translateY(${originalCardTop}px) scale(0.3)`;
 
             setTimeout(() => {
                 dealtCardsContainer.appendChild(dealtCard);
-                dealtCard.style.transform = `translateX(${originalCardLeft}px) translateY(${originalCardTop}px) scale(0.5) rotateY(180deg)`;
+                dealtCard.style.transform = `translateX(${originalCardLeft}px) translateY(${originalCardTop}px) scale(0.3) rotateY(180deg)`;
                 dealtCard.style.transitionDelay = `${index * 0.2}s`;
             }, 500);
 
@@ -152,6 +155,18 @@ dealtCardsContainer.addEventListener('mouseleave', function() {
 dealtCardsContainer.addEventListener('click', function(e) {
     const clickedCard = e.target.closest('.dealt-card');
     if (clickedCard) {
-        clickedCard.classList.toggle('enlarged');
+      if (!clickedCard.classList.contains('enlarged')) {
+        clickedCard.classList.add('enlarged');
+        const overlay = document.createElement('div');
+        overlay.classList.add('overlay');
+        document.body.appendChild(overlay);
+        overlay.addEventListener('click', function() {
+          clickedCard.classList.remove('enlarged');
+          overlay.remove();
+        });
+      } else {
+        clickedCard.classList.remove('enlarged');
+        document.querySelector('.overlay').remove();
+      }
     }
-});
+  });
