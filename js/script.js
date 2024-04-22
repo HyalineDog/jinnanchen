@@ -155,7 +155,7 @@ dealtCardsContainer.addEventListener('mousemove', function(e) {
             }
         }
         else{
-            card.style.transition = 'transform 0.1s';
+            card.style.transition = 'transform 0.1s' ;
             card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0)';
         }
     });

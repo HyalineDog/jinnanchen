@@ -11,7 +11,7 @@ body {
   background-color: #f0f0f0;
 }
 
-ul{
+ul {
   padding-left: 16px;
 }
 
@@ -90,7 +90,7 @@ h4 {
   background-color: #f0f0f000 !important;
   border: 0;
   position: relative;
-  width:1fr;
+  width: 1fr;
   max-width: 400px;
   right: 10px;
   top: 45%;
@@ -133,11 +133,13 @@ h4 {
     opacity: 0;
     z-index: 3;
   }
+
   50% {
     transform: translate(100px, -35%);
     opacity: 1;
     z-index: 2;
   }
+
   100% {
     transform: translate(0, 0);
     opacity: 1;
@@ -195,15 +197,16 @@ h4 {
   display: none;
 }
 
-.options:hover{
+.options:hover {
   cursor: pointer;
   background-color: aquamarine;
 }
-.search{
+
+.search {
   cursor: pointer;
 }
 
-.drop-down-options{
+.drop-down-options {
   display: none;
   position: absolute;
   gap: 20px;
@@ -211,7 +214,7 @@ h4 {
   background-color: #f0f0f0f0;
   border: #ffffff solid 0.5px;
   padding: 20px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   z-index: 999;
   border-radius: 16px;
 }
@@ -220,6 +223,7 @@ h4 {
   0% {
     opacity: 0;
   }
+
   100% {
     opacity: 1;
   }
@@ -229,6 +233,7 @@ h4 {
   0% {
     transform: translateY(-10px);
   }
+
   100% {
     transform: translateY(0);
   }
@@ -238,6 +243,7 @@ h4 {
   0% {
     opacity: 1;
   }
+
   100% {
     opacity: 0;
   }
@@ -247,6 +253,7 @@ h4 {
   0% {
     transform: translateY(0);
   }
+
   100% {
     transform: translateY(-10px);
   }
@@ -278,15 +285,26 @@ h4 {
   transition: transform 1s;
   margin-bottom: 20px;
   text-align: center;
+  cursor: pointer;
 }
 
-.portfolio-cards .details {
+.dealt-cards {
+  display: flex;
+  align-items: flex-end;
+}
+
+.portfolio-cards h4,
+.portfolio-cards ul,
+.portfolio-cards p {
   display: none;
 }
 
-.portfolio-cards.enlarged .details {
+.portfolio-cards:hover h4 {
+  animation-name: slide;
+  animation-duration: 200ms;
   display: block;
 }
+
 
 .portfolio-cards .preview {
   position: absolute;
@@ -301,6 +319,11 @@ h4 {
   border-radius: 20px;
 }
 
+.portfolio-cards:hover .preview {
+    filter: blur(8px);
+    -webkit-filter: blur(8px);
+}
+
 .portfolio-cards.logo {
   width: 150px;
   border-radius: 10px;
@@ -313,20 +336,8 @@ h4 {
   scale: 1.05;
 }
 
-.portfolio-cards h3,
-.portfolio-cards h4,
-.portfolio-cards p {
-  display: none !important;
-}
-
 .portfolio-cards.animate {
   animation: shuffle 2s forwards;
-}
-
-.portfolio-cards h3,
-.portfolio-cards h4,
-.portfolio-cards p {
-  display: block;
 }
 
 .portfolio-cards.enlarged {
@@ -338,6 +349,10 @@ h4 {
   z-index: 9999;
   overflow: auto;
 }
+
+/* .portfolio-cards.enlarged  {
+  display: inline-block;
+} */
 
 .portfolio-cards.enlarged:hover {
   transform: none;
