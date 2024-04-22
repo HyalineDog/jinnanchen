@@ -15,7 +15,6 @@ let currentRow = 0;
 searchElement.addEventListener('click', () => {
     dropDownIcon.classList.toggle('rotate');
     dropDownOptions.classList.toggle('show');
-    search.style = 'border-bottom: none';
     if (!dropDownOptions.classList.contains('show')) {
         dropDownOptions.style.animationName = 'fade_reverse, slide_reverse';
         search.style = 'border-bottom: black 3px solid';
@@ -128,10 +127,20 @@ options.forEach(option => {
         dropDownIcon.classList.remove('rotate');
         dropDownOptions.classList.remove('show');
         dropDownOptions.style.animationName = 'fade_reverse, slide_reverse';
-        search.style = 'border-bottom: black 3px solid';
 
         returnCards();
     });
+});
+
+document.addEventListener('click', (event) => {
+    const target = event.target;
+    if (!dropDownOptions.contains(target) && !searchElement.contains(target)) {
+        dropDownIcon.classList.remove('rotate');
+        dropDownOptions.classList.remove('show');
+        dropDownOptions.style.animationName = 'fade_reverse, slide_reverse';
+        search.style = 'border-bottom: black 3px solid';
+    }
+
 });
 
 dealtCardsContainer.addEventListener('mousemove', function(e) {

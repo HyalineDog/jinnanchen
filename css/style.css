@@ -22,7 +22,7 @@ ul {
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
   gap: 20px;
   align-items: center;
-  margin: 20vh 0 0 0;
+  margin: 15vh 0 0 0;
   justify-items: center;
 }
 
@@ -199,7 +199,7 @@ h4 {
 
 .options:hover {
   cursor: pointer;
-  background-color: aquamarine;
+  text-decoration: underline;
 }
 
 .search {
@@ -300,8 +300,8 @@ h4 {
 }
 
 .portfolio-cards:hover h4 {
-  animation-name: slide;
-  animation-duration: 200ms;
+  animation-name: slide, fade;
+  animation-duration: 0.5s;
   display: block;
 }
 
@@ -342,7 +342,6 @@ h4 {
 .portfolio-cards.enlarged .preview{
   display: none;
 }
-
 
 .portfolio-cards.enlarged {
   position: fixed;
