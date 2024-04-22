@@ -305,7 +305,6 @@ h4 {
   display: block;
 }
 
-
 .portfolio-cards .preview {
   position: absolute;
   left: 3px;
@@ -340,19 +339,40 @@ h4 {
   animation: shuffle 2s forwards;
 }
 
-.portfolio-cards.enlarged {
-  position: fixed;
-  height: 85%;
-  width: 40%;
-  top: 5%;
-  right: 30%;
-  z-index: 9999;
-  overflow: auto;
+.portfolio-cards.enlarged .preview{
+  display: none;
 }
 
-/* .portfolio-cards.enlarged  {
+
+.portfolio-cards.enlarged {
+  position: fixed;
+  height: 80%;
+  width: 30%;
+  top: 5%;
+  right: 32%;
+  z-index: 9999;
+  overflow: auto;
+  cursor: auto;
+  text-align: left;
+  padding: 40px;
+}
+
+.portfolio-cards.enlarged h4 {
   display: inline-block;
-} */
+  animation: none;
+}
+
+.portfolio-cards.enlarged h3 {
+  font-size: 2vw;
+  font-weight: 400;
+  margin-bottom: 16px;
+}
+
+.portfolio-cards.enlarged p,
+.portfolio-cards.enlarged ul {
+  display: block;
+  font-size: 1vw;
+}
 
 .portfolio-cards.enlarged:hover {
   transform: none;
