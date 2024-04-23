@@ -128,7 +128,6 @@ options.forEach(option => {
         dropDownOptions.style.animationName = 'fade_reverse, slide_reverse';
 
         returnCards();
-        dealCards(selectedClass);
     });
 });
 
