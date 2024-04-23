@@ -46,8 +46,8 @@ function dealCards(selectedClass) {
 
             setTimeout(() => {
                 dealtCardsContainer.appendChild(dealtCard);
-                dealtCard.style.transform = `translateX(${originalCardLeft}px) translateY(${originalCardTop}px) scale(0.3) rotateY(180deg)`;
-                dealtCard.style.transitionDelay = `${index * 0.2}s`;
+                dealtCard.style.transform = `translateX(${originalCardLeft+100}px) translateY(${originalCardTop-430}px) scale(0.3) rotateY(180deg)`;
+                dealtCard.style.transitionDelay = `${index * 0.1}s`;
             }, 500);
 
             setTimeout(() => {
@@ -140,7 +140,6 @@ document.addEventListener('click', (event) => {
         dropDownOptions.style.animationName = 'fade_reverse, slide_reverse';
         search.style = 'border-bottom: black 3px solid';
     }
-
 });
 
 dealtCardsContainer.addEventListener('mousemove', function(e) {
