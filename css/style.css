@@ -209,6 +209,8 @@ h4 {
 .drop-down-options {
   display: none;
   position: absolute;
+  max-height: calc(100vh - 200px);
+  overflow-y: auto;
   gap: 20px;
   width: 51vw;
   background-color: #f0f0f0f0;
