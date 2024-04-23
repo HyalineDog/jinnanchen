@@ -310,7 +310,7 @@ h4 {
   left: 3px;
   top: 3px;
   z-index: -1;
-  object-fit: fill;
+  object-fit: cover;
   background-repeat: no-repeat;
   width: max-content;
   max-width: 232px;
