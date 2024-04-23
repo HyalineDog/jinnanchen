@@ -74,7 +74,6 @@ function returnCards() {
         setTimeout(() => {
             card.style.transition = 'transform 0.5s';
             card.style.transform = `translate(${originalCardLeft - card.offsetLeft}px, ${originalCardTop - card.offsetTop}px) scale(0.01)`;
-
             setTimeout(() => {
                 card.remove();
             }, 500);
