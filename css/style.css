@@ -209,7 +209,7 @@ h4 {
 .drop-down-options {
   display: none;
   position: absolute;
-  max-height: calc(100vh - 200px);
+  max-height: calc(100vh - 48vh);
   overflow-y: auto;
   gap: 20px;
   width: 51vw;
@@ -219,6 +219,23 @@ h4 {
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   z-index: 999;
   border-radius: 16px;
+}
+
+.drop-down-options::-webkit-scrollbar-button {
+  display: none;
+}
+
+.drop-down-options::-webkit-scrollbar-thumb {
+  background-color: #d6d6d6;
+  border-radius: 6px;
+}
+
+.drop-down-options::-webkit-scrollbar-track {
+  background-color: #f0f0f0f0;
+}
+
+.drop-down-options::-webkit-scrollbar {
+  width: 8px;
 }
 
 @keyframes fade {
