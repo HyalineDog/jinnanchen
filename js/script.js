@@ -128,6 +128,7 @@ options.forEach(option => {
         dropDownOptions.style.animationName = 'fade_reverse, slide_reverse';
 
         returnCards();
+        dealCards(selectedClass);
     });
 });
 
@@ -188,9 +189,6 @@ dealtCardsContainer.addEventListener('click', function(e) {
           clickedCard.classList.remove('enlarged');
           overlay.remove();
         });
-      } else {
-        clickedCard.classList.remove('enlarged');
-        document.querySelector('.overlay').remove();
-      }
+    }
     }
   });
