@@ -10,6 +10,20 @@ body {
   align-items: center;
   background-color: #f0f0f0;
 }
+.skip-to-main {
+  position: absolute;
+  top: -9999px;
+  left: -9999px;
+}
+
+.skip-to-main:focus {
+  top: 0;
+  left: 0;
+  padding: 10px;
+  background-color: #000;
+  color: #fff;
+  z-index: 9999;
+}
 
 ul {
   padding-left: 16px;
