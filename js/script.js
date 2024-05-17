@@ -128,10 +128,6 @@ options.forEach(option => {
         dropDownOptions.style.animationName = 'fade_reverse, slide_reverse';
 
         returnCards();
-    //     setTimeout(() => {
-    //         dealtCardsContainer.innerHTML = '';
-    //         dealCards(selectedClass);
-    //     }, 500);
     });
 });
 

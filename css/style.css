@@ -55,13 +55,13 @@ p {
 }
 
 h2 {
-  font-size: 3vw;
+  font-size: 6vh;
   font-weight: 400;
   margin-bottom: 0;
 }
 
 h3 {
-  font-size: 1vw;
+  font-size: 2vh;
   font-weight: 700;
   margin-bottom: 16px;
 }
@@ -75,6 +75,7 @@ h4 {
   margin-right: 16px;
   margin-bottom: 8px;
   display: inline-block;
+  background-color: #ffffff44;
 }
 
 .card {
@@ -342,8 +343,8 @@ h4 {
     -webkit-filter: blur(8px);
 }
 
-.portfolio-cards.logo {
-  width: 150px;
+.logo {
+  height: 40px;
   border-radius: 10px;
   margin-bottom: 10px;
 }
