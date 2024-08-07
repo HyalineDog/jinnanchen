@@ -60,6 +60,10 @@ function dealCards(selectedClass) {
                 currentColumn = 0;
                 currentRow++;
             }
+
+            setTimeout(() => {
+                addHoverEffectToCards();
+            }, 1000 + (portfolioCards.length * 200));
         }
     });
 }
@@ -71,6 +75,9 @@ function returnCards() {
     const originalCardTop = originalCardRect.top;
 
     dealtCards.forEach((card, index) => {
+        card.removeEventListener('mousemove', handleCardHover);
+        card.removeEventListener('mouseleave', handleCardLeave);
+
         setTimeout(() => {
             card.style.transition = 'transform 0.5s';
             card.style.transform = `translate(${originalCardLeft - card.offsetLeft}px, ${originalCardTop - card.offsetTop}px) scale(0.01)`;
@@ -144,40 +151,47 @@ document.addEventListener('click', (event) => {
     }
 });
 
-dealtCardsContainer.addEventListener('mousemove', function(e) {
+function addHoverEffectToCards() {
     const dealtCards = dealtCardsContainer.querySelectorAll('.dealt-card');
     dealtCards.forEach(card => {
-        if (!card.classList.contains('enlarged')) {
-            const rect = card.getBoundingClientRect();
-            const centerX = rect.left + rect.width / 2;
-            const centerY = rect.top + rect.height / 2;
-            const mouseX = e.clientX - centerX;
-            const mouseY = e.clientY - centerY;
-
-            if (mouseX >= -rect.width / 2 && mouseX <= rect.width / 2 && mouseY >= -rect.height / 2 && mouseY <= rect.height / 2) {
-                const rotateX = (mouseY / rect.height) * -25;
-                const rotateY = (mouseX / rect.width) * 25;
-                card.style.transition = 'transform 0.2s';
-                card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
-            } else {
-                card.style.transition = 'transform 1s';
-                card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0)';
-            }
-        }
-        else{
-            card.style.transition = 'transform 0.1s' ;
-            card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0)';
-        }
+        card.addEventListener('mousemove', handleCardHover);
+        card.addEventListener('mouseleave', handleCardLeave);
     });
-});
+}
 
-dealtCardsContainer.addEventListener('mouseleave', function() {
+function handleCardHover(e) {
+    if (this.classList.contains('enlarged')) return;
+
+    const rect = this.getBoundingClientRect();
+    const centerX = rect.left + rect.width / 2;
+    const centerY = rect.top + rect.height / 2;
+    const mouseX = e.clientX - centerX;
+    const mouseY = e.clientY - centerY;
+
+    const maxRotation = 15; // Maximum rotation in degrees
+    const rotateX = (mouseY / (rect.height / 2)) * -maxRotation;
+    const rotateY = (mouseX / (rect.width / 2)) * maxRotation;
+
+    this.style.transition = 'transform 0.1s ease-out';
+    requestAnimationFrame(() => {
+        this.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.05)`;
+    });
+}
+
+function handleCardLeave() {
+    this.style.transition = 'transform 0.3s ease-out';
+    requestAnimationFrame(() => {
+        this.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) scale(1)';
+    });
+}
+
+function addHoverEffectToCards() {
     const dealtCards = dealtCardsContainer.querySelectorAll('.dealt-card');
     dealtCards.forEach(card => {
-        card.style.transition = 'transform 0.5s';
-        card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0)';
+        card.addEventListener('mousemove', handleCardHover);
+        card.addEventListener('mouseleave', handleCardLeave);
     });
-});
+}
 
 dealtCardsContainer.addEventListener('click', function(e) {
     const clickedCard = e.target.closest('.dealt-card');
