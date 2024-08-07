@@ -48,12 +48,12 @@ function dealCards(selectedClass) {
                 dealtCardsContainer.appendChild(dealtCard);
                 dealtCard.style.transform = `translateX(${originalCardLeft+100}px) translateY(${originalCardTop-430}px) scale(0.3) rotateY(180deg)`;
                 dealtCard.style.transitionDelay = `${index * 0.1}s`;
-            }, 500);
+            }, 300);
 
             setTimeout(() => {
                 dealtCard.style.backgroundImage = 'none';
                 applyAutoHoverEffect(dealtCard);
-            }, 1000 + (index * 200));
+            }, 500 + (index * 200));
 
             currentColumn++;
             if (currentColumn === maxColumns) {
@@ -63,7 +63,7 @@ function dealCards(selectedClass) {
 
             setTimeout(() => {
                 addHoverEffectToCards();
-            }, 1000 + (portfolioCards.length * 200));
+            }, 500 + (portfolioCards.length * 200));
         }
     });
 }
@@ -93,8 +93,8 @@ function applyAutoHoverEffect(card) {
     const centerX = rect.left + rect.width / 2;
     const centerY = rect.top + rect.height / 2;
 
-    const rotateX = (Math.random() - 0.5) * 10;
-    const rotateY = (Math.random() - 0.5) * 10;
+    const rotateX = (Math.random() - 0.5) * 5;
+    const rotateY = (Math.random() - 0.5) * 5;
 
     card.style.transition = 'transform 0.3s';
     card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;

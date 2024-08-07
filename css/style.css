@@ -57,31 +57,31 @@ main {
 
 
 h1 {
-  font-size: 2vw;
+  font-size: 2em;
   font-weight: 700;
   margin-bottom: 10px;
   line-height: 1.5;
 }
 
 p {
-  font-size: 1vw;
+  font-size: 1.5em;
   margin-bottom: 5px;
 }
 
 h2 {
-  font-size: 6vh;
+  font-size: 3.5em;
   font-weight: 400;
   margin-bottom: 0;
 }
 
 h3 {
-  font-size: 2vh;
+  font-size: 1em;
   font-weight: 700;
   margin-bottom: 16px;
 }
 
 h4 {
-  font-size: 1vw;
+  font-size: 1em;
   font-weight: 400;
   border: 1px solid #000;
   border-radius: 13px;
@@ -163,7 +163,7 @@ h4 {
 }
 
 .drop_down_icon {
-  size: 1vw;
+  size: 1.5em;
   margin-left: 10px;
   position: absolute;
   right: 24vw;
@@ -421,4 +421,92 @@ h4 {
   height: 100%;
   background-color: rgba(0, 0, 0, 0.2);
   z-index: 9998;
+}
+
+/* Responsive styles */
+@media screen and (max-width: 1200px) {
+  .wrapper {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  .container {
+    grid-column: 1 / span 3;
+  }
+
+  .card {
+    grid-column: 1 / span 3;
+    grid-row: 2;
+    margin-top: 1.25em;
+  }
+
+  #dealtCardsContainer {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  html {
+    font-size: 14px;
+    /* Slightly smaller base font size */
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .wrapper {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .container {
+    grid-column: 1 / span 2;
+  }
+
+  .card {
+    grid-column: 1 / span 2;
+  }
+
+  #dealtCardsContainer {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  html {
+    font-size: 12px;
+    /* Further reduce base font size */
+  }
+
+  .drop_down_icon {
+    right: 1em;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .wrapper {
+    grid-template-columns: 1fr;
+  }
+
+  .container {
+    grid-column: 1;
+  }
+
+  .card {
+    grid-column: 1;
+  }
+
+  #dealtCardsContainer {
+    grid-template-columns: 1fr;
+  }
+
+  html {
+    font-size: 10px;
+    /* Smallest base font size for mobile */
+  }
+
+  .drop_down_icon {
+    right: 0.5em;
+  }
+}
+
+/* Add this to your existing CSS */
+.dealt-card {
+  width: 85%;
+  max-width: 15em;
+  /* Equivalent to 240px at base font size */
+  margin: 0 auto;
 }
