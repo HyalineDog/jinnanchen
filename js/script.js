@@ -137,7 +137,7 @@ options.forEach(option => {
         returnCards();
         setTimeout(() => {
             dealCards(selectedClass);
-        }, 0.01); // Adjust this delay if needed to match the retraction animation
+        }, 300); // Adjust this delay if needed to match the retraction animation
     });
 });
 
