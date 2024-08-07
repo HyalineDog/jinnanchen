@@ -128,6 +128,9 @@ options.forEach(option => {
         dropDownOptions.style.animationName = 'fade_reverse, slide_reverse';
 
         returnCards();
+        setTimeout(() => {
+            dealCards(selectedClass);
+        }, 0.01); // Adjust this delay if needed to match the retraction animation
     });
 });
 
