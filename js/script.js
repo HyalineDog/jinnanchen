@@ -29,44 +29,53 @@ function dealCards(selectedClass) {
     currentRow = 0;
     dealtCardsContainer.innerHTML = '';
 
-    portfolioCards.forEach(function(card, index) {
-        if (selectedClass === 'all' || card.classList.contains(selectedClass)) {
-            const dealtCard = card.cloneNode(true);
-            dealtCard.classList.add('dealt-card');
-            dealtCard.style.display = 'block';
+    // Convert NodeList to Array and filter based on selectedClass
+    let cardsToDeal = Array.from(portfolioCards).filter(card => 
+        selectedClass === 'all' || card.classList.contains(selectedClass)
+    );
 
-            const originalCardRect = originalCard.getBoundingClientRect();
-            const originalCardLeft = originalCardRect.left;
-            const originalCardTop = originalCardRect.top;
+    // Shuffle the array of cards
+    for (let i = cardsToDeal.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [cardsToDeal[i], cardsToDeal[j]] = [cardsToDeal[j], cardsToDeal[i]];
+    }
 
-            dealtCard.style.backgroundImage = `url(${originalCard.src})`;
-            dealtCard.style.backgroundSize = 'cover';
-            dealtCard.style.backgroundPosition = 'center';
-            dealtCard.style.backgroundRepeat = 'no-repeat';
-            dealtCard.style.transform = `translateX(${originalCardLeft}px) translateY(${originalCardTop}px) scale(0.3)`;
+    cardsToDeal.forEach(function(card, index) {
+        const dealtCard = card.cloneNode(true);
+        dealtCard.classList.add('dealt-card');
+        dealtCard.style.display = 'block';
 
-            setTimeout(() => {
-                dealtCardsContainer.appendChild(dealtCard);
-                dealtCard.style.transform = `translateX(${originalCardLeft+100}px) translateY(${originalCardTop-430}px) scale(0.3) rotateY(180deg)`;
-                dealtCard.style.transitionDelay = `${index * 0.1}s`;
-            }, 300);
+        const originalCardRect = originalCard.getBoundingClientRect();
+        const originalCardLeft = originalCardRect.left;
+        const originalCardTop = originalCardRect.top;
 
-            setTimeout(() => {
-                dealtCard.style.backgroundImage = 'none';
-                applyAutoHoverEffect(dealtCard);
-            }, 500 + (index * 200));
+        dealtCard.style.backgroundImage = `url(${originalCard.src})`;
+        dealtCard.style.backgroundSize = 'cover';
+        dealtCard.style.backgroundPosition = 'center';
+        dealtCard.style.backgroundRepeat = 'no-repeat';
+        dealtCard.style.transform = `translateX(${originalCardLeft}px) translateY(${originalCardTop}px) scale(0.3)`;
 
-            currentColumn++;
-            if (currentColumn === maxColumns) {
-                currentColumn = 0;
-                currentRow++;
-            }
+        setTimeout(() => {
+            dealtCardsContainer.appendChild(dealtCard);
+            dealtCard.style.transform = `translateX(${originalCardLeft+100}px) translateY(${originalCardTop-430}px) scale(0.3) rotateY(180deg)`;
+            dealtCard.style.transitionDelay = `${index * 0.1}s`;
+        }, 300);
 
-            setTimeout(() => {
-                addHoverEffectToCards();
-            }, 500 + (portfolioCards.length * 200));
+        setTimeout(() => {
+            dealtCard.style.backgroundImage = 'none';
+            applyAutoHoverEffect(dealtCard);
+        }, 500 + (index * 200));
+
+        currentColumn++;
+        if (currentColumn === maxColumns) {
+            currentColumn = 0;
+            currentRow++;
         }
     });
+
+    setTimeout(() => {
+        addHoverEffectToCards();
+    }, 500 + (cardsToDeal.length * 200));
 }
 
 function returnCards() {
@@ -194,18 +203,29 @@ function addHoverEffectToCards() {
     });
 }
 
-dealtCardsContainer.addEventListener('click', function(e) {
+function resetCardTransform(card) {
+    card.style.transition = 'transform 0.3s ease-out';
+    card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) scale(1)';
+}
+
+dealtCardsContainer.addEventListener('click', function (e) {
     const clickedCard = e.target.closest('.dealt-card');
     if (clickedCard) {
-      if (!clickedCard.classList.contains('enlarged')) {
-        clickedCard.classList.add('enlarged');
-        const overlay = document.createElement('div');
-        overlay.classList.add('overlay');
-        document.body.appendChild(overlay);
-        overlay.addEventListener('click', function() {
-          clickedCard.classList.remove('enlarged');
-          overlay.remove();
-        });
+        if (!clickedCard.classList.contains('enlarged')) {
+            // Reset the card's transform before enlarging
+            resetCardTransform(clickedCard);
+
+            // Small delay to ensure the reset is applied before enlarging
+            setTimeout(() => {
+                clickedCard.classList.add('enlarged');
+                const overlay = document.createElement('div');
+                overlay.classList.add('overlay');
+                document.body.appendChild(overlay);
+                overlay.addEventListener('click', function () {
+                    clickedCard.classList.remove('enlarged');
+                    overlay.remove();
+                });
+            }, 50);
+        }
     }
-    }
-  });
+});

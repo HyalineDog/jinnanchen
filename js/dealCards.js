@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', function() {
       originalCard.classList.add('animate');
       setTimeout(() => {
           originalCard.classList.remove('animate');
-      }, 500);
+      }, 100);
 
       portfolioCards.forEach(function(card, index) {
           const dealtCard = card.cloneNode(true);
@@ -22,12 +22,12 @@ document.addEventListener('DOMContentLoaded', function() {
               dealtCardsContainer.appendChild(dealtCard);
               dealtCard.style.transform = `translateX(${currentColumn * 220}px) translateY(${currentRow * 370}px)`;
               dealtCard.style.transitionDelay = `${index * 0.2}s`;
-          }, 500);
+          }, 100);
 
           setTimeout(() => {
               dealtCard.style.transform = 'translateX(0) translateY(0)';
               dealtCard.style.transitionDelay = '0s';
-          }, 1000 + (index * 200));
+          }, 100 + (index * 200));
 
           currentColumn++;
           if (currentColumn === maxColumns) {
