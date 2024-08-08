@@ -8,6 +8,7 @@ const search = document.querySelector('.search');
 const originalCard = document.getElementById('originalCard');
 const portfolioCards = document.querySelectorAll('.portfolio-cards');
 
+
 const maxColumns = 5;
 let currentColumn = 0;
 let currentRow = 0;
@@ -130,8 +131,8 @@ options.forEach(option => {
         selectedOption.textContent = option.textContent;
         selectedOption.classList.remove(...selectedOption.classList);
         selectedOption.classList.add('options', 'selected', selectedClass);
-        dropDownIcon.classList.remove('rotate');
-        dropDownOptions.classList.remove('show');
+        dropDownIcon.classList.toggle('rotate');
+        dropDownOptions.classList.toggle('show');
         dropDownOptions.style.animationName = 'fade_reverse, slide_reverse';
 
         returnCards();

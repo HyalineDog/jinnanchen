@@ -1,219 +1,224 @@
 <!DOCTYPE html>
 <html lang="en">
 
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>jinnan chen's portfolio</title>
-    <link rel="stylesheet" href="css/html5reset.css">
-    <link rel="stylesheet" href="css/style.css">
-  </head>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jinnan Chen - Portfolio</title>
+  <link rel="stylesheet" href="css/html5reset.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
 
-  <body>
-    <header>
-      <a href="#main-content" class="skip-to-main">Skip to Main Content</a>
-    </header>
-    <main id="main-content">
+<body>
+  <a href="#main-content" class="skip-to-main">Skip to Main Content</a>
+
+  <main id="main-content" role="main">
     <div class="wrapper">
       <div class="container">
-        <h1>hi, i am jinnan chen
-          <br>i design for<br>
-        </h1>
-        <div class="search row">
-          <div class="flex-col-3-search">
-            <h2 class="options selected all" data-sort=".all">Everything Experience Related</h2>
-            <svg class="drop_down_icon" xmlns="http://www.w3.org/2000/svg" width="34" height="22" viewBox="0 0 34 22"
-              fill="none">
-              <path
-                d="M19.2463 20.4626C18.0524 21.8112 15.9476 21.8112 14.7537 20.4626L1.49763 5.48855C-0.216276 3.55252 1.15821 0.5 3.74389 0.500001L30.2561 0.500003C32.8418 0.500003 34.2163 3.55252 32.5024 5.48855L19.2463 20.4626Z"
-                fill="black"/>
-            </svg>
-          </div>
-        </div>
-        <div class="drop-down-options row">
-          <div class="options featured" data-sort=".featured">
-            <h2>Featured Projects</h2>
-          </div>
-          <div class="options all" data-sort=".all">
-            <h2>Everything Experience Related</h2>
-          </div>
-          <div class="options iot" data-sort=".iot">
-            <h2>Internet of Things</h2>
-          </div>
-          <div class="options mobile" data-sort=".mobile">
-            <h2>Mobile</h2>
-          </div>
-          <div class="options pc" data-sort=".vcd">
-            <h2>Desktop</h2>
-          </div>
-          <div class="options web" data-sort=".web">
-            <h2>Web</h2>
-          </div>
-          <div class="options ar" data-sort=".ar">
-            <h2>AR/VR</h2>
-          </div>
-          <div class="options exhibition" data-sort=".exibition">
-            <h2>Exibition</h2>
-          </div>
-          <div class="options vcd" data-sort=".vcd">
-            <h2>Visual Communication</h2>
-          </div>
-        </div>
+        <h1>Hi, I am Jinnan Chen. I design for</h1>
+
+<div class="search-container">
+  <div class="search-overlay">
+    <div class="search row">
+      <div class="flex-col-3-search">
+        <h2 class="options selected all" sort=".all">Everything Experience Related</h2>
+        <img src="image/drop-down.svg" alt="Dropdown" class="drop_down_icon">
       </div>
+    </div>
+  </div>
+</div>
+
+        <nav class="drop-down-options row">
+          <h2 class="options featured" data-sort=".featured">Featured Projects</h2>
+          <h2 class="options all" data-sort=".all">Everything Experience Related</h2>
+          <h2 class="options iot" data-sort=".iot">Internet of Things</h2>
+          <h2 class="options mobile" data-sort=".mobile">Mobile</h2>
+          <h2 class="options pc" data-sort=".vcd">Desktop</h2>
+          <h2 class="options web" data-sort=".web">Web</h2>
+          <h2 class="options ar" data-sort=".ar">AR/VR</h2>
+          <h2 class="options exhibition" data-sort=".exibition">Exhibition</h2>
+          <h2 class="options vcd" data-sort=".vcd">Visual Communication</h2>
+        </nav>
+      </div>
+
       <div class="card">
-        <img id="originalCard" src="image/card-bg.png" alt="Card Background">
-        <div class="text">Click me to deal cards</div>
+        <img src="image/card-bg.png" alt="Card Background" id="originalCard">
+        <p class="text">Click me to deal cards</p>
       </div>
-      <div id="dealtCardsContainer"></div>
-      <div class="mix portfolio-cards pc iot" id="card-1">
-        <img class="preview" src="image/Presentation App.png" alt="project previews">
-        <img class="logo" src="image/comlogo1.svg" alt="iFlytek Logo">
-        <h3>Class Room Presentation</h3>
-        <h4>UX/UI Design</h4>
-        <h4>Design System</h4>
-        <h4>User Research</h4>
-        <h4>Usability Testing</h4>
-        <h4>Interaction Design</h4>
-        <h4>Design Strategy</h4>
-        <p><br><strong>Challenge: </strong> Traditional presentation tools left K-12 teachers frustrated
-          and unprepared, hindering classroom engagement.</br>
 
-          <br><strong>Solution: </strong> I partnered with educators to design a presentation application focused on
-          simplicity, flexibility, and platform-agnostic accessibility.</br>
+      <div id="dealtCardsContainer">
+        <!-- Card 1 -->
+        <div id="card-1" class="mix portfolio-cards pc iot">
+          <img src="image/Presentation App.png" alt="Class Room Presentation preview" class="preview">
+          <img src="image/comlogo1.svg" alt="iFlytek Logo" class="logo">
+          <h3>Class Room Presentation</h3>
+          <div class="tags">
+            <h4>UX/UI Design</h4>
+            <h4>Design System</h4>
+            <h4>User Research</h4>
+            <h4>Usability Testing</h4>
+            <h4>Interaction Design</h4>
+            <h4>Design Strategy</h4>
+          </div>
+          <div class="description">
+            <p><strong>Challenge:</strong> Traditional presentation tools left K-12 teachers frustrated and unprepared,
+              hindering classroom engagement.</p>
+            <p><strong>Solution:</strong> I partnered with educators to design a presentation application focused on
+              simplicity, flexibility, and platform-agnostic accessibility.</p>
+            <p><strong>My Impact:</strong></p>
+            <ul>
+              <li>Deep User Research: Conducted 30+ teacher interviews and surveyed 200+ to understand needs and pain
+                points.</li>
+              <li>Intuitive UI/UX: Redesigned the application from scratch, prioritizing ease of use and clear visual
+                hierarchy.</li>
+              <li>Unified Design System: Created a scalable system to ensure consistent user experience across
+                smartboards, computers, and tablets.</li>
+            </ul>
+            <p><strong>Result:</strong> Teachers love the seamless experience! Increased adoption and positive feedback
+              showcase the power of user-centered design to empower educators and transform classrooms.</p>
+          </div>
+        </div>
 
-          <br><strong>My Impact:</strong>
-        <ul>
-          <li>Deep User Research: Conducted 30+ teacher interviews and surveyed 200+ to understand needs and pain
-            points.</li>
-          <li>Intuitive UI/UX: Redesigned the application from scratch, prioritizing ease of use and clear visual
-            hierarchy.</li>
-          <li>Unified Design System: Created a scalable system to ensure consistent user experience across smartboards,
-            computers, and tablets.</li>
-        </ul></br>
-        </p>
-        <p><strong>Result:</strong> Teachers love the seamless experience! Increased adoption and positive feedback
-          showcase the power of user-centered design to empower educators and transform classrooms.</p>
+        <!-- Card 2 -->
+        <div id="card-2" class="mix portfolio-cards web">
+          <img src="image/Teacher Online Community.png" alt="ZiKe Teacher Online Community preview" class="preview">
+          <img src="image/comlogo1.svg" alt="iFlytek Logo" class="logo">
+          <h3>ZiKe Teacher Online Community</h3>
+          <div class="tags">
+            <h4>Design Strategy</h4>
+            <h4>User Research</h4>
+            <h4>Experience Architect</h4>
+            <h4>Competitive Analysis</h4>
+          </div>
+          <div class="description">
+            <p><strong>Challenge:</strong> Ignite deeper engagement and loyalty among ZiKe teachers.</p>
+            <p><strong>Solution:</strong> Spearheaded the design of a multi-phase online community platform.</p>
+            <p><strong>My Impact:</strong></p>
+            <ul>
+              <li>Engaged Community: Built dedicated forums and chat channels to foster peer support and best-practice
+                sharing.</li>
+              <li>UGC Resource Hub: Empowered teachers as content creators, enriching the platform with lesson plans,
+                presentations, and teaching tips.</li>
+              <li>Professional Growth: Enabled continuous learning through webinars, workshops, and online courses led
+                by experts.</li>
+            </ul>
+            <p><strong>Result:</strong> A thriving community of connected and empowered ZiKe educators, driving
+              increased platform usage and brand loyalty.</p>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="mix portfolio-cards iot" id="card-3">
+          <img class="preview" src="image/Boarderless Classroom.png" alt="project previews for Borderless Classroom">
+          <img class="logo" src="image/comlogo1.svg" alt="iFlytek Logo">
+          <h3>Borderless Classroom</h3>
+          <h4>Lead UX Designer</h4>
+          <h4>User Experience Architect</h4>
+          <h4>Flow Analysis</h4>
+          <h4>Design Strategy</h4>
+          <p><br><strong>Challenge: </strong>Educational resource inequality between urban and rural areas in China
+            limits
+            opportunities for rural students. Traditional methods fail to address this disparity.</br>
+
+            <br><strong>Solution: </strong> Developed the Borderless Classroom Product, leveraging iFlytek smartboards
+            to
+            connect classrooms in resource-rich urban areas with those in rural areas. This allows urban teachers to
+            deliver high-quality lessons simultaneously to multiple rural classrooms, bridging the resource gap.</br>
+
+            <br><strong>My Impact: </strong>
+          <ul>
+            <li>Led the design and implementation of the smartboard integration system, enabling seamless
+              cross-classroom interaction.</br>
+            <li>Collaborated with educators to develop engaging lesson plans suitable for diverse environments.</li>
+            <li>Contributed to reducing educational inequality by providing rural students with access to top-tier
+              resources and instruction.</li>
+          </ul>
+          </br>
+          </p>
+
+          <p><br><strong>Result: </strong>Pilot programs demonstrated significant improvements in rural students'
+            academic performance and engagement. Borderless Classrooms is poised to revolutionize education in China by
+            promoting equal access to quality learning experiences.</br></p>
+        </div>
+        <!-- Card 4 -->
+        <div class="mix portfolio-cards pc" id="card-4">
+          <img class="preview" src="image/mTeam Reflect.png" alt="project previews for mTeam VR Relfect">
+          <img class="logo" src="image/mTeam Logo.png" alt="mTeam Logo">
+          <h3>mTeam Debriefing</h3>
+          <h4>Research</h4>
+          <h4>Research synthesis</h4>
+          <h4>Taskflow</h4>
+          <h4>Prototype</h4>
+          <h4>Usability Testing</h4>
+          <p><br><strong>Challenge: </strong>Medical trainees at the University of Michigan at Advanced Cardiovascular
+            Life Support (ACLS) training need a better feedback system on their simulation performances to improve their
+            skill set and pass certifications.</br>
+
+            <br><strong>Solution: </strong>The Game Changer in ACLS Training - A Decade of Grooming Medical Leaders.
+            This product has helped improve the unique training for each medical professional. Allowing for better
+            feedback and training.</br>
+
+            <br><strong>My Impact: </strong>
+          <ul>
+            <li>Identified the need for a more effective feedback system through user research.</br>
+            <li>Contributed to creating a user-centered design through user testing and iteration. </li>
+            <li>Designed a solution that leverages VR's potential to personalize feedback and improve skill development
+              for ACLS trainees.</li>
+          </ul>
+          </br>
+          </p>
+          <p><br><strong>Result: </strong>The final design features an engaging, holistic experience combining video,
+            metrics, instructor notes, insightful visualizations, and gamification to empower immersive excellence in
+            medical training. The system also gathers comprehensive data from each training session, providing anonymous
+            student feedback and identifying recurring areas of difficulty to help instructors refine their lectures and
+            address common student misunderstandings.</br></p>
+
+        </div>
+        <!-- Card 5 -->
+        <div class="mix portfolio-cards iot featured" id="card-5">
+          <img class="preview" src="image/Eink.png" alt="project previews for mTeam VR Relfect">
+          <img class="logo" src="image/comlogo1.svg" alt="iFlytek Logo">
+          <h3>Eink Student Pad</h3>
+          <h4>Lead UX Designer</h4>
+          <h4>Design Strategies</h4>
+          <h4>User Research</h4>
+          <h4>Usability Testing</h4>
+          <p><br><strong>Challenge: </strong>China's "Double Reduction" policy challenged education companies.
+            Concerns
+            about screen time and student vision
+            health pushed us to create a more comprehensive solution than just E-ink screens.</br>
+
+            <br><strong>Solution: </strong>The E-ink student pad with a balance of hardware and software
+            optimization.
+            It has user-friendly interface designed specifically for student needs and workflows.</br>
+
+            <br><strong>My Impact: </strong>
+          <ul>
+            <li>Led the design team to move beyond basic E-ink hardware optimization.</li>
+            <li>Championed a user-centered approach, prioritizing student workflows.</li>
+            <li>Developed a task-based interface to minimize distractions and enhance learning.</li>
+            <li>Pioneered a UX-centered 0-1 product development workflow for future projects.</li>
+          </ul>
+          </br>
+          </p>
+
+          <p><br><strong>Result: </strong>Despite top-down requirements, I saw an opportunity to transform
+            tablets into
+            a classroom-ready tool. By leveraging user research and design theories, I created a task-based interface
+            that
+            resonated with student workflows. This tailored user experience addressed E-ink limitations while promoting
+            focused
+            learning through purpose-built features.</p>
+          <p>Our goal was not a generic tablet, but a unique learning experience. This human-centric approach
+            aimed to
+            improve academic outcomes by providing students with an intuitive and distraction-free tool.</p>
+        </div>
       </div>
-      <div class="mix portfolio-cards web" id="card-2">
-        <img class="preview" src="image/Teacher Online Community.png" alt="project previews">
-        <img class="logo" src="image/comlogo1.svg" alt="iFlytek Logo">
-        <h3>ZiKe Teacher Online Community</h3>
-        <h4>Design Strategy</h4>
-        <h4>User Research</h4>
-        <h4>Experience Architect</h4>
-        <h4>Competitive Analysis</h4>
-        <p><br><strong>Challenge: </strong>Ignite deeper engagement and loyalty among ZiKe teachers.</br>
+    </div>
+  </main>
 
-          <br><strong>Solution: </strong>Spearheaded the design of a multi-phase online community platform.</br>
-
-          <br><strong>My Impact: </strong>
-        <ul>
-          <li>Engaged Community: Built dedicated forums and chat channels to foster peer support and best-practice
-            sharing.</br>
-          <li>UGC Resource Hub: Empowered teachers as content creators, enriching the platform with lesson plans,
-            presentations, and teaching tips.</li>
-          <li>Professional Growth: Enabled continuous learning through webinars, workshops, and online courses led by
-            experts.</li>
-        </ul>
-        </br>
-        </p>
-
-        <p><br><strong>Result: </strong>A thriving community of connected and empowered ZiKe educators, driving
-          increased platform usage and brand loyalty.</br></p>
-      </div>
-      <div class="mix portfolio-cards iot" id="card-3">
-        <img class="preview" src="image/Boarderless Classroom.png" alt="project previews for Borderless Classroom">
-        <img class="logo" src="image/comlogo1.svg" alt="iFlytek Logo">
-        <h3>Borderless Classroom</h3>
-        <h4>Lead UX Designer</h4>
-        <h4>User Experience Architect</h4>
-        <h4>Flow Analysis</h4>
-        <h4>Design Strategy</h4>
-        <p><br><strong>Challenge: </strong>Educational resource inequality between urban and rural areas in China limits
-          opportunities for rural students. Traditional methods fail to address this disparity.</br>
-
-          <br><strong>Solution: </strong> Developed the Borderless Classroom Product, leveraging iFlytek smartboards to
-          connect classrooms in resource-rich urban areas with those in rural areas. This allows urban teachers to
-          deliver high-quality lessons simultaneously to multiple rural classrooms, bridging the resource gap.</br>
-
-          <br><strong>My Impact: </strong>
-        <ul>
-          <li>Led the design and implementation of the smartboard integration system, enabling seamless cross-classroom
-            interaction.</br>
-          <li>Collaborated with educators to develop engaging lesson plans suitable for diverse environments.</li>
-          <li>Contributed to reducing educational inequality by providing rural students with access to top-tier
-            resources and instruction.</li>
-        </ul>
-        </br>
-        </p>
-
-        <p><br><strong>Result: </strong>Pilot programs demonstrated significant improvements in rural students' academic
-          performance and engagement. Borderless Classrooms is poised to revolutionize education in China by promoting
-          equal access to quality learning experiences.</br></p>
-      </div>
-      <div class="mix portfolio-cards pc" id="card-4">
-        <img class="preview" src="image/mTeam Reflect.png" alt="project previews for mTeam VR Relfect">
-        <img class="logo" src="image/mTeam Logo.png" alt="mTeam Logo">
-        <h3>mTeam Debriefing</h3>
-        <h4>Research</h4>
-        <h4>Research synthesis</h4>
-        <h4>Taskflow</h4>
-        <h4>Prototype</h4>
-        <h4>Usability Testing</h4>
-        <p><br><strong>Challenge: </strong>Medical trainees at the University of Michigan at Advanced Cardiovascular
-          Life Support (ACLS) training need a better
-          feedback system on their simulation performances to improve their skill set and pass certifications.</br>
-
-          <br><strong>Solution: </strong>The Game Changer in ACLS Training - A Decade of Grooming Medical Leaders. This
-          product has helped improve the unique
-          training for each medical professional. Allowing for better feedback and training.</br>
-
-          <br><strong>My Impact: </strong>
-        <ul>
-          <li>Identified the need for a more effective feedback system through user research.</br>
-          <li>Contributed to creating a user-centered design through user testing and iteration. </li>
-          <li>Designed a solution that leverages VR's potential to personalize feedback and improve skill development for ACLS trainees.</li>
-        </ul>
-        </br>
-        </p>
-
-        <p><br><strong>Result: </strong>The final design features an engaging, holistic experience combining video,
-          metrics, instructor notes, insightful visualizations, and gamification to empower immersive excellence in
-          medical training. The system also gathers comprehensive data from each training session, providing anonymous
-          student feedback and identifying recurring areas of difficulty to help instructors refine their lectures and
-          address common student misunderstandings.</br></p>
-      </div>
-      <div class="mix portfolio-cards iot featured" id="card-5">
-        <img class="preview" src="image/Eink.png" alt="project previews for mTeam VR Relfect">
-        <img class="logo" src="image/comlogo1.svg" alt="iFlytek Logo">
-        <h3>Eink Student Pad</h3>
-        <h4>Lead UX Designer</h4>
-        <h4>Design Strategies</h4>
-        <h4>User Research</h4>
-        <h4>Usability Testing</h4>
-        <p><br><strong>Challenge: </strong>China's "Double Reduction" policy challenged education companies. Concerns about screen time and student vision
-        health pushed us to create a more comprehensive solution than just E-ink screens.</br>
-
-          <br><strong>Solution: </strong>The E-ink student pad with a balance of hardware and software optimization. It has user-friendly interface designed specifically for student needs and workflows.</br>
-
-          <br><strong>My Impact: </strong>
-        <ul>
-          <li>Led the design team to move beyond basic E-ink hardware optimization.</li>
-          <li>Championed a user-centered approach, prioritizing student workflows.</li>
-          <li>Developed a task-based interface to minimize distractions and enhance learning.</li>
-          <li>Pioneered a UX-centered 0-1 product development workflow for future projects.</li>
-        </ul>
-        </br>
-        </p>
-
-        <p><br><strong>Result: </strong>Despite top-down requirements, I saw an opportunity to transform tablets into a classroom-ready tool. By leveraging user research and design theories, I created a task-based interface that resonated with student workflows. This tailored user experience addressed E-ink limitations while promoting focused learning through purpose-built features.</p>
-        <p>Our goal was not a generic tablet, but a unique learning experience. This human-centric approach aimed to improve academic outcomes by providing students with an intuitive and distraction-free tool.</p>
-      </div>
-      <script src="js/mixitup.js"></script>
-      <script src="js/script.js"></script>
-    </main>
-  </body>
-  <footer></footer>
-</main>
+  <script src="js/mixitup.min.js"></script>
+  <script src="js/script.js"></script>
+</body>
 
 </html>
