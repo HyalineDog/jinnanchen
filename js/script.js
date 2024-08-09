@@ -178,7 +178,7 @@ function handleCardHover(e) {
     const mouseX = e.clientX - centerX;
     const mouseY = e.clientY - centerY;
 
-    const maxRotation = 15; // Maximum rotation in degrees
+    const maxRotation = 5; // Maximum rotation in degrees
     const rotateX = (mouseY / (rect.height / 2)) * -maxRotation;
     const rotateY = (mouseX / (rect.width / 2)) * maxRotation;
 

@@ -315,15 +315,15 @@ p {
 /* Enlarged Portfolio Card Styles */
 .portfolio-cards.enlarged {
   position: fixed;
-  height: 70vh;
-  width: 30vw;
-  top: 10%;
+  height: 960px;
+  width: 680px;
+  top: 7%;
   right: 32%;
   z-index: 9999;
   overflow: auto;
   cursor: auto;
   text-align: left;
-  padding: 40px;
+  padding: 30px;
 }
 
 .portfolio-cards.enlarged .preview {
@@ -344,13 +344,85 @@ p {
 .portfolio-cards.enlarged p,
 .portfolio-cards.enlarged ul {
   display: block;
-  font-size: 1em;
+  font-size: 1.1em;
+  margin-bottom: 10px;
+  line-height: normal;
 }
 
 .portfolio-cards.enlarged:hover {
   transform: none;
   scale: none;
   box-shadow: 4px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* taglines */
+/* New styles for tagline */
+.portfolio-cards .tagline {
+  display: none;
+  font-size: 0.9em;
+  color: #000000;
+  margin: 5px 0 10px 0;
+  transition: opacity 0.3s ease;
+}
+
+/* Show tagline on hover */
+.portfolio-cards:hover .tagline {
+  display: block;
+}
+
+/* Adjust spacing for tags on hover */
+.portfolio-cards:hover .tags {
+  margin-top: 5px;
+}
+
+/* Existing styles for tags, adjust as needed */
+.portfolio-cards .tags {
+  margin-top: 10px;
+  transition: margin-top 0.3s ease;
+}
+
+/* Existing styles for h3, adjust as needed */
+.portfolio-cards h3 {
+  margin-bottom: 15px;
+}
+
+/* Adjust styles for enlarged cards if needed */
+.portfolio-cards.enlarged .tagline {
+  display: block;
+  margin-bottom: 15px;
+  font-size: 1.1em;
+}
+
+
+/* hero image */
+/* Hero image styles */
+.portfolio-cards .hero-image {
+  display: none;
+  width: 100%;
+  height: 230px;
+  /* Adjust as needed */
+  background-size: cover;
+  background-position: center;
+  margin-bottom: 20px;
+}
+
+/* Show hero image in enlarged view */
+.portfolio-cards.enlarged .hero-image {
+  display: block;
+}
+
+/* Adjust other elements in enlarged view */
+.portfolio-cards.enlarged .preview,
+.portfolio-cards.enlarged .logo {
+  display: none;
+}
+
+.portfolio-cards.enlarged h3 {
+  margin-top: 20px;
+}
+
+.portfolio-cards.enlarged .tags {
+  margin-bottom: 10px;
 }
 
 /* Overlay */
