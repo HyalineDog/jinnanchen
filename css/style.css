@@ -315,7 +315,7 @@ p {
 /* Enlarged Portfolio Card Styles */
 .portfolio-cards.enlarged {
   position: fixed;
-  height: 960px;
+  height: 83vh;
   width: 680px;
   top: 7%;
   right: 32%;
