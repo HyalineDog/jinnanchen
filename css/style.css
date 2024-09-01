@@ -324,20 +324,18 @@ p {
 
 .portfolio-cards .preview {
   position: absolute;
-  left: 3px;
-  top: 3px;
+  left: 1px;
+  bottom: 1px;
   z-index: -1;
   object-fit: cover;
   background-repeat: no-repeat;
-  width: max-content;
-  max-width: 232px;
-  height: 332px;
-  border-radius: 20px;
+  width: calc(100% - 1px);
+  border-radius: 5px;
 }
 
 .portfolio-cards:hover .preview {
-  filter: blur(8px);
-  -webkit-filter: blur(8px);
+  filter: blur(16px);
+  -webkit-filter: blur(16px);
 }
 
 .portfolio-cards:hover {
@@ -455,7 +453,6 @@ p {
 .portfolio-cards .hero-image {
   display: none;
   width: 100%;
-  height: 230px;
   /* Adjust as needed */
   background-size: cover;
   background-position: center;
@@ -554,7 +551,7 @@ p {
 }
 
 /* Responsive Styles */
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 1500px) {
   .wrapper {
     grid-template-columns: 1fr 1fr 1fr;
   }
@@ -564,25 +561,20 @@ p {
   }
 
   .card {
-    grid-column: 1 / span 3;
-    grid-row: 2;
-    margin-top: 1.25em;
+    display: none;
   }
 
   #dealtCardsContainer {
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(4, 240px);
   }
 
   html {
     font-size: 14px;
   }
 
-  .portfolio-cards.enlarged {
-    width: 70vw;
-  }
 }
 
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 1100px) {
   .wrapper {
     grid-template-columns: 1fr 1fr;
   }
@@ -591,12 +583,8 @@ p {
     grid-column: 1 / span 2;
   }
 
-  .card {
-    grid-column: 1 / span 2;
-  }
-
   #dealtCardsContainer {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3, 240px);
   }
 
   html {
@@ -608,11 +596,11 @@ p {
   }
 
   .portfolio-cards.enlarged {
-    width: 60vw;
+    width: 680px;
   }
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 800px) {
   .wrapper {
     grid-template-columns: 1fr;
   }
@@ -626,7 +614,7 @@ p {
   }
 
   #dealtCardsContainer {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(1fr, 240px);
   }
 
   html {
@@ -647,7 +635,7 @@ p {
   }
 
   .portfolio-cards.enlarged {
-    width: 80vw;
-    height: 80vh;
+    width: 300px;
+    left: calc(50% - 200px);
   }
 }
