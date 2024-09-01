@@ -57,7 +57,8 @@ function dealCards(selectedClass) {
 
         setTimeout(() => {
             dealtCardsContainer.appendChild(dealtCard);
-            dealtCard.style.transform = `translateX(${originalCardLeft+100}px) translateY(${originalCardTop-430}px) scale(0.3) rotateY(180deg)`;
+            // Add the location of where the card was before dealt
+            dealtCard.style.transform = `translateX(${originalCardLeft-90}px) translateY(${originalCardTop-2400}px) scale(0.3) rotateY(180deg)`;
             dealtCard.style.transitionDelay = `${index * 0.1}s`;
         }, 300);
 
