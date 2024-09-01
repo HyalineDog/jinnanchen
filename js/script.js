@@ -8,10 +8,10 @@ const search = document.querySelector('.search');
 const originalCard = document.getElementById('originalCard');
 const portfolioCards = document.querySelectorAll('.portfolio-cards');
 
-
 const maxColumns = 5;
 let currentColumn = 0;
 let currentRow = 0;
+
 
 searchElement.addEventListener('click', () => {
     dropDownIcon.classList.toggle('rotate');
