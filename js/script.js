@@ -230,3 +230,4 @@ dealtCardsContainer.addEventListener('click', function (e) {
         }
     }
 });
+

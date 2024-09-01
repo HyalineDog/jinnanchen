@@ -15,6 +15,7 @@ body {
 ul {
   padding-left: 16px;
   font-weight: 400;
+  list-style-type: disc;
 }
 
 li {
@@ -327,13 +328,12 @@ p {
 }
 
 .description ul {
-  padding-left: 20px;
+  padding-left: 0px;
 }
 
 .description li {
   margin-bottom: 1.3em;
 }
-
 .description li:last-child {
   margin-bottom: 30px;
 }
@@ -377,11 +377,20 @@ p {
   line-height: normal;
 }
 
-.portfolio-cards.enlarged ul li {
+.portfolio-cards.enlarged ul {
   display: block;
-  margin-bottom: 1.3em;
+  list-style-type: disc;
+  font-size: 1.1em;
   line-height: normal;
+  padding-left: 20px;
+  margin-bottom: 15px;
 }
+
+.portfolio-cards.enlarged li {
+  display: list-item;
+  margin-bottom: 1.3em;
+}
+
 
 .portfolio-cards.enlarged h4 {
   display: block;
