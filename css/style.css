@@ -344,7 +344,7 @@ p {
   height: 83vh;
   width: 30%;
   min-width: 350px;
-  max-width: 600px;
+  max-width: 700px;
   left: calc(50% - 200px);
   top: 5%;
   z-index: 9999;
@@ -554,6 +554,10 @@ p {
 
   .portfolio-cards.enlarged {
     width: 30%;
+  }
+
+  .search{
+    width: 80%;
   }
 
   .flex-col-3-search {
