@@ -66,14 +66,14 @@ main {
 
 /* Typography */
 h1 {
-  font-size: 1.5em;
+  font-size: 1.1em;
   font-weight: 700;
   margin-bottom: 10px;
   line-height: 1.5;
 }
 
 h2 {
-  font-size: 1.5em;
+  font-size: 1.3em;
   font-weight: 400;
   margin-bottom: 0;
 }
@@ -249,6 +249,15 @@ p {
   cursor: pointer;
 }
 
+.dealt-card {
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out, transform 0.5s ease-out;
+}
+
+.dealt-card.in-slot {
+  opacity: 1;
+}
+
 .portfolio-cards .role-and-duration {
   display: column;
   column-count: 2;
@@ -337,6 +346,17 @@ p {
   cursor: auto;
   text-align: left;
   padding: 30px;
+}
+
+.portfolio-cards.enlarged::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #fff;
+  z-index: -1;
 }
 
 .portfolio-cards.enlarged .preview {
@@ -514,6 +534,92 @@ p {
 }
 
 /* Responsive Styles */
+
+@media screen and (max-width: 800px) {
+
+  /* Disable card dealing animation */
+  .portfolio-cards {
+    transition: none;
+    animation: none;
+  }
+
+  /* Disable card tilting effect */
+  .portfolio-cards:hover {
+    transform: none;
+    box-shadow: none;
+    scale: none;
+  }
+
+
+
+  /* Adjust the enlarged card styles for mobile */
+  .portfolio-cards.enlarged {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    max-width: none;
+    min-width: none;
+    overflow-y: auto;
+    padding: 20px;
+    box-sizing: border-box;
+  }
+}
+
+@media screen and (min-width: 600px) {
+  html {
+    font-size: 12px;
+  }
+
+  .wrapper {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .container {
+    grid-column: 1 / span 2;
+    width: 80vw;
+  }
+
+  #dealtCardsContainer {
+    grid-template-columns: repeat(2, 240px);
+  }
+
+  .drop_down_icon {
+    right: 1em;
+    width: 40px;
+    height: 40px;
+  }
+
+  .portfolio-cards.enlarged {
+    width: 30%;
+  }
+
+  .search{
+    width: 80%;
+  }
+
+  .flex-col-3-search {
+    padding: 5px 0;
+  }
+
+  .search-container {
+    width: 95vw;
+  }
+  .drop-down-options {
+    width: 75vw;
+  }
+
+  h2 {
+    font-size: 3em;
+  }
+
+  h1 {
+    font-size: 2em;
+  }
+
+}
+
 @media screen and (min-width: 800px) {
   html {
     font-size: 12px;
@@ -551,11 +657,18 @@ p {
   }
 
   .search-container {
-    width: 100%;
+    width: 95vw;
+  }
+  .drop-down-options {
+    width: 75vw;
   }
 
   h2 {
     font-size: 3em;
+  }
+
+  h1 {
+    font-size: 2em;
   }
 }
 
@@ -565,7 +678,7 @@ p {
   }
 
   .wrapper {
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
   }
 
   .container {
@@ -575,13 +688,14 @@ p {
   .search {
     width: 100%;
   }
-  
+
   .search-container {
-    width: 55vw;
+    width: 50vw;
+    min-width: 630px;
   }
 
   .drop-down-options {
-    width: 55vw;
+    width: 50vw;
   }
 
   .card {
@@ -600,10 +714,6 @@ p {
 
   .portfolio-cards.enlarged {
     left: calc(50% - 14vw);
-  }
-
-  h2 {
-    font-size: 3em;
   }
 }
 
@@ -651,5 +761,8 @@ p {
 
     h2{
       font-size: 3.5em;
+    }
+    h1{
+      font-size: 2.5em;
     }
   }

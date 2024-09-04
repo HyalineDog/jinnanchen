@@ -65,6 +65,7 @@ function dealCards(selectedClass) {
         setTimeout(() => {
             dealtCard.style.backgroundImage = 'none';
             applyAutoHoverEffect(dealtCard);
+            dealtCard.classList.add('in-slot');
         }, 500 + (index * 200));
 
         currentColumn++;
@@ -226,8 +227,22 @@ dealtCardsContainer.addEventListener('click', function (e) {
                     clickedCard.classList.remove('enlarged');
                     overlay.remove();
                 });
+
+                // Push a new state to the browser history
+                history.pushState({cardEnlarged: true}, '');
             }, 50);
         }
     }
 });
 
+// Add event listener for popstate (back button)
+window.addEventListener('popstate', function(event) {
+    const enlargedCard = document.querySelector('.dealt-card.enlarged');
+    if (enlargedCard) {
+        enlargedCard.classList.remove('enlarged');
+        const overlay = document.querySelector('.overlay');
+        if (overlay) {
+            overlay.remove();
+        }
+    }
+});
