@@ -556,6 +556,7 @@ p {
     -webkit-filter: none;
   }
 
+
   /* Adjust the enlarged card styles for mobile */
   .portfolio-cards.enlarged {
     position: fixed;
@@ -601,10 +602,6 @@ p {
 
   .search{
     width: 80%;
-  }
-
-  .flex-col-3-search {
-    padding: 5px 0;
   }
 
   .search-container {
