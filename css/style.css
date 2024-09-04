@@ -550,7 +550,11 @@ p {
     scale: none;
   }
 
-
+  /* Disable hover effects */
+  .portfolio-cards:hover .preview {
+    filter: none;
+    -webkit-filter: none;
+  }
 
   /* Adjust the enlarged card styles for mobile */
   .portfolio-cards.enlarged {
@@ -559,7 +563,7 @@ p {
     left: 0;
     width: 100%;
     height: 100%;
-    max-width: none;
+    max-width: 800px;
     min-width: none;
     overflow-y: auto;
     padding: 20px;
@@ -723,16 +727,16 @@ p {
     }
 
     .wrapper {
-      grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
     }
 
     .container {
-      grid-column: 2 / span 3;
+      grid-column: 1 / span 3;
     }
 
     .card {
       display: flex;
-      grid-column: 5;
+      grid-column: 4;
       grid-row-start: 1;
       max-width: 400px;
       right: 10px;
