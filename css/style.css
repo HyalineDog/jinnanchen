@@ -16,6 +16,7 @@ ul {
   padding-left: 16px;
   font-weight: 400;
   list-style-type: disc;
+  line-height: normal;
 }
 
 li {
@@ -535,8 +536,8 @@ p {
 #aboutCardsContainer {
   display: grid;
   grid-template-columns: repeat(auto-fit);
-  gap: 2.5vh;
-  margin: 3em 0;
+  gap: 2vh;
+  margin: 1em 0;
 }
 
 .about-card {
@@ -545,6 +546,26 @@ p {
   box-shadow: 4px 2px 5px rgba(0, 0, 0, 0.2);
   padding: 20px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.about-card p {
+  display: block;
+  font-size: 1.1em;
+  line-height: normal;
+}
+
+.about-card ul {
+  display: block;
+  list-style-type: disc;
+  font-size: 1.1em;
+  line-height: normal;
+  padding-left: 12px;
+  /* margin-bottom: 15px; */
+}
+
+.about-card li {
+  display: list-item;
+  /* margin-bottom: 1.3em; */
 }
 
 
