@@ -4,16 +4,16 @@
     "type": "split",
     "children": [
       {
-        "id": "3ad72ab41bc3947c",
+        "id": "7299b8932220ce3b",
         "type": "tabs",
         "children": [
           {
-            "id": "6e33d2551532312c",
+            "id": "665873d1d1876e77",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Portfolio Cards/Class Room Presentation.md",
+                "file": "Class Notes/SI 534/Lecture 2.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Portfolio Cards/Class Room Presentation.md",
+                "file": "Class Notes/SI 534/Lecture 2.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Portfolio Cards/Class Room Presentation.md",
+                "file": "Class Notes/SI 534/Lecture 2.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Portfolio Cards/Class Room Presentation.md"
+                "file": "Class Notes/SI 534/Lecture 2.md"
               }
             }
           },
@@ -180,11 +180,16 @@
       "khoj:Khoj": false
     }
   },
-  "active": "6e33d2551532312c",
+  "active": "665873d1d1876e77",
   "lastOpenFiles": [
+    "Class Notes/SI 534/Lecture 1.md",
+    "Class Notes/SI 534/Lecture 2.md",
+    "image.png",
+    "Class Notes/SI 534",
+    "Class Notes",
+    "Portfolio Cards/Class Room Presentation.md",
     "Presentation Hero.png",
     "Portfolio Cards/City Health Dashboard Redesign.md",
-    "Portfolio Cards/Class Room Presentation.md",
     "Portfolio Cards/AI Classroom System Report.md",
     "Portfolio Cards/Burke Museum App.md",
     "Portfolio Cards/Borderless Classroom.md",
@@ -208,8 +213,6 @@
     "Portfolio Cards/Below.md",
     "Portfolio Cards/mTeam Debriefing.md",
     "Portfolio Cards/Eink Student Pad.md",
-    "textgenerator/templates/awesomePrompts/astrologerAwesome.md",
-    "textgenerator/templates/awesomePrompts/asciiartistAwesome.md",
     "textgenerator/templates/awesomePrompts",
     "textgenerator/templates",
     "textgenerator",
