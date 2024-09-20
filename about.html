@@ -6,10 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="image/favicon.svg" type="image/x-icon">
     <link rel="shortcut icon" href="image/favicon.svg" type="image/x-icon">
-    <title>About Jinnan Chen</title>
+    <title>Jinnan Chen - UX Designer</title>
     <link rel="stylesheet" href="css/html5reset.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
     <script type="text/javascript">
         (function (c, l, a, r, i, t, y) {
             c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
@@ -40,6 +41,28 @@
 
     <main id="main-content" role="main">
 <div class="about-container">
+    <div class="business-card-container">
+        <div class="business-card">
+            <div class="card-front">
+                <div class="profile-image-container">
+                    <img src="image/Profile.jpg" alt="Jinnan Chen" class="profile-image">
+                </div>
+                <h1>Jinnan Chen</h1>
+                <p class="title">UX Designer</p>
+                <p class="company">ArcaTwo</p>
+                <div class="contact-icons">
+                    <a href="https://www.linkedin.com/in/jinnan-kit-chen/" target="_blank" aria-label="LinkedIn Profile">
+                        <i data-lucide="linkedin" aria-hidden="true"></i>
+                    </a>
+                    <a href="mailto:jinnanch@umich.edu" aria-label="Email">
+                        <i data-lucide="mail" aria-hidden="true"></i>
+                    </a>
+                    <a href="https://github.com/HyalineDog" target="_blank" aria-label="GitHub Profile">
+                        <i data-lucide="github" aria-hidden="true"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
     <header class="about-header">
         <h1>About Me</h1>
     </header>
@@ -65,8 +88,8 @@
             <h4>Experience</h4>
             <ul>
                 <li>UX Designer at ArcaTwo</li>
+                <li>Developing roguelike deck building game</li>
                 <li>2 years at iFlytek - Ed-Tech solutions for K-12</li>
-                <li>Developing "Deck-Tac-Toe" game</li>
             </ul>
         </div>
 
@@ -87,9 +110,8 @@
             <h4>Interests</h4>
             <ul>
                 <li>Analyzing UX in video games and movies</li>
-                <li>Strategizing in roguelike games</li>
+                <li>Developing and playing games</li>
                 <li>High school wrestling</li>
-                <li>Designing game mechanics</li>
             </ul>
         </div>
     </div>
@@ -105,13 +127,16 @@
         <h2>Let's Connect</h2>
         <p>I'm always excited to take on new challenges and collaborate on projects that push the boundaries of user
             experience. Let's connect and create something amazing together!</p>
-        <a href="mailto:your.email@example.com" class="contact-button">Get in Touch</a>
+        <a href="mailto:jinnanch@umich.edu" class="contact-button">Get in Touch</a>
     </div>
 </div>
     </main>
     <script src="js/mixitup.min.js"></script>
     <script src="js/script.js"></script>
     <script type="module" src="https://md-block.verou.me/md-block.js"></script>
+    <script>
+        lucide.createIcons();
+    </script>
 </body>
 
 </html>
