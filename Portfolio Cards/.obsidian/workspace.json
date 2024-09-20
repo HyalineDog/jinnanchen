@@ -4,18 +4,16 @@
     "type": "split",
     "children": [
       {
-        "id": "7299b8932220ce3b",
+        "id": "a55714266ff5cecf",
         "type": "tabs",
         "children": [
           {
-            "id": "665873d1d1876e77",
+            "id": "0f10f83e71543c19",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "image",
               "state": {
-                "file": "Class Notes/SI 534/Lecture 2.md",
-                "mode": "source",
-                "source": false
+                "file": "Presentation Hero.png"
               }
             }
           }
@@ -85,7 +83,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Class Notes/SI 534/Lecture 2.md",
+                "file": "Presentation Hero.png",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +100,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Class Notes/SI 534/Lecture 2.md",
+                "file": "Presentation Hero.png",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +123,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Class Notes/SI 534/Lecture 2.md"
+                "file": "Presentation Hero.png"
               }
             }
           },
@@ -158,8 +156,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200,
-    "collapsed": true
+    "width": 394.5
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -180,11 +177,12 @@
       "khoj:Khoj": false
     }
   },
-  "active": "665873d1d1876e77",
+  "active": "2cf38c094ff53d6f",
   "lastOpenFiles": [
-    "Class Notes/SI 534/Lecture 1.md",
-    "Class Notes/SI 534/Lecture 2.md",
     "image.png",
+    "Class Notes/SI 534/Lecture 2.md",
+    "Portfolio Cards/Apio Voice.md",
+    "Class Notes/SI 534/Lecture 1.md",
     "Class Notes/SI 534",
     "Class Notes",
     "Portfolio Cards/Class Room Presentation.md",
@@ -193,7 +191,6 @@
     "Portfolio Cards/AI Classroom System Report.md",
     "Portfolio Cards/Burke Museum App.md",
     "Portfolio Cards/Borderless Classroom.md",
-    "Portfolio Cards/Apio Voice.md",
     "Portfolio Cards/Pin Point Weather App.md",
     "Portfolio Cards/Portfolio Cards.md",
     "Portfolio Cards/Presentation Hero.png",
