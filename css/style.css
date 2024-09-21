@@ -747,7 +747,7 @@ h2 {
 
 .contact-button {
   display: inline-block;
-  background-color: #007bff;
+  background-color: #D47474;
   color: #fff;
   padding: 12px 24px;
   border-radius: 5px;
@@ -758,7 +758,7 @@ h2 {
 }
 
 .contact-button:hover {
-  background-color: #D47474;
+  background-color: #007bff;
 }
 
 

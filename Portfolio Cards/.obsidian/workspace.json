@@ -4,16 +4,18 @@
     "type": "split",
     "children": [
       {
-        "id": "a55714266ff5cecf",
+        "id": "ff0285b165ebbabc",
         "type": "tabs",
         "children": [
           {
-            "id": "0f10f83e71543c19",
+            "id": "55750f53d2b100a4",
             "type": "leaf",
             "state": {
-              "type": "image",
+              "type": "markdown",
               "state": {
-                "file": "Presentation Hero.png"
+                "file": "Untitled.md",
+                "mode": "source",
+                "source": false
               }
             }
           }
@@ -83,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Presentation Hero.png",
+                "file": "Untitled.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -100,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Presentation Hero.png",
+                "file": "Untitled.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -123,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Presentation Hero.png"
+                "file": "Untitled.md"
               }
             }
           },
@@ -156,7 +158,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 394.5
+    "width": 200,
+    "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -179,6 +182,8 @@
   },
   "active": "2cf38c094ff53d6f",
   "lastOpenFiles": [
+    "Untitled.md",
+    "Presentation Hero.png",
     "image.png",
     "Class Notes/SI 534/Lecture 2.md",
     "Portfolio Cards/Apio Voice.md",
@@ -186,7 +191,6 @@
     "Class Notes/SI 534",
     "Class Notes",
     "Portfolio Cards/Class Room Presentation.md",
-    "Presentation Hero.png",
     "Portfolio Cards/City Health Dashboard Redesign.md",
     "Portfolio Cards/AI Classroom System Report.md",
     "Portfolio Cards/Burke Museum App.md",
