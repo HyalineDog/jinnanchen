@@ -164,6 +164,15 @@ p {
   line-height: 1.5;
 }
 
+h1,
+h2,
+h3,
+h4,
+p {
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
 /* Card Styles */
 .card {
   grid-column: 1;
