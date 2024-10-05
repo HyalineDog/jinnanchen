@@ -219,6 +219,8 @@ p {
   grid-column: 1;
   grid-row: 2 / span 5;
   display: grid;
+  justify-content: center;
+  align-items: center;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   column-gap: 12vh;
   row-gap: 3vh;
