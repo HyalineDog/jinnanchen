@@ -332,6 +332,14 @@ p {
 .dealt-card {
   opacity: 0;
   transition: opacity 0.5s ease-in-out, transform 0.5s ease-out;
+  background: linear-gradient(
+    120deg,
+    rgba(255, 255, 255, .25),
+    rgba(255, 255, 255, .75), 70%, 
+    rgba(255, 255, 255, .25)
+  );  border: 1px solid rgba(255, 255, 255, .25);
+  box-shadow: 0 0 10px 1px rgba(0, 0, 0, .25);
+  backdrop-filter: blur(15px);
 }
 
 .dealt-card.in-slot {
@@ -419,7 +427,6 @@ p {
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: #fff;
   z-index: -1;
 }
 
@@ -517,6 +524,7 @@ p {
   background-size: cover;
   background-position: center;
   margin-bottom: 20px;
+  border-radius: 5px;
 }
 
 .portfolio-cards.enlarged .hero-image {
@@ -561,6 +569,7 @@ p {
   left: 50%;
   margin-top: 150px;
   transform: translate(-55%, -30%);
+  
 }
 .contact-icons {
   display: flex;
@@ -594,12 +603,26 @@ p {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: #ffffff;
+  background: linear-gradient(
+    120deg,
+    rgba(255, 255, 255, .25),
+    rgba(255, 255, 255, .75), 70%, 
+    rgba(255, 255, 255, .25)
+  );  border: 1px solid rgba(255, 255, 255, .25);
+  box-shadow: 0 0 10px 1px rgba(0, 0, 0, .25);
+  backdrop-filter: blur(15px);
 }
 
 .card-back {
   transform: rotateY(180deg);
-  background-color: #f8f9fa;
+  background: linear-gradient(
+    120deg,
+    rgba(255, 255, 255, .25),
+    rgba(255, 255, 255, .75), 70%, 
+    rgba(255, 255, 255, .25)
+  );  border: 1px solid rgba(255, 255, 255, .25);
+  box-shadow: 0 0 10px 1px rgba(0, 0, 0, .25);
+  backdrop-filter: blur(15px);
   justify-content: space-between;
 }
 
