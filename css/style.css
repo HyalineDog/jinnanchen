@@ -346,11 +346,11 @@ p {
   background: linear-gradient(
     120deg,
     rgba(255, 255, 255, .25),
-    rgba(255, 255, 255, .75), 70%, 
+    rgba(255, 255, 255, .75), 80%, 
     rgba(255, 255, 255, .25)
   );  border: 1px solid rgba(255, 255, 255, .25);
   box-shadow: 0 0 10px 1px rgba(0, 0, 0, .25);
-  backdrop-filter: blur(15px);
+  backdrop-filter: blur(20px);
 }
 
 .dealt-card.in-slot {
@@ -621,7 +621,7 @@ p {
     rgba(255, 255, 255, .25)
   );  border: 1px solid rgba(255, 255, 255, .25);
   box-shadow: 0 0 10px 1px rgba(0, 0, 0, .25);
-  backdrop-filter: blur(15px);
+  backdrop-filter: blur(10px);
 }
 
 .card-back {
@@ -633,7 +633,7 @@ p {
     rgba(255, 255, 255, .25)
   );  border: 1px solid rgba(255, 255, 255, .25);
   box-shadow: 0 0 10px 1px rgba(0, 0, 0, .25);
-  backdrop-filter: blur(15px);
+  backdrop-filter: blur(10px);
   justify-content: space-between;
 }
 
