@@ -197,7 +197,7 @@ p {
 
 .card img {
   filter: drop-shadow(3px 4px 4px #222);
-  width: 60%;
+  width: 50%;
 }
 
 .card img:hover {
@@ -336,7 +336,7 @@ p {
   padding: 20px;
   transition: transform 1s;
   margin-bottom: 20px;
-  text-align: center;
+  /* text-align: center; */
   cursor: pointer;
 }
 
@@ -367,12 +367,12 @@ p {
 
 .portfolio-cards .preview {
   position: absolute;
-  left: 1px;
-  bottom: 1px;
-  z-index: -1;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);  /* Center the image perfectly */
+  height: 100%;
   object-fit: cover;
-  background-repeat: no-repeat;
-  width: calc(100% - 1px);
+  z-index: -1;
   border-radius: 5px;
 }
 
