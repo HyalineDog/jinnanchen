@@ -62,6 +62,7 @@ li {
 .nav-logo {
   height: 40px;
   width: auto;
+  display: none;
 }
 
 .website-name {
@@ -369,7 +370,7 @@ p {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);  /* Center the image perfectly */
+  transform: translate(-50%, -50%);
   height: 100%;
   object-fit: cover;
   z-index: -1;
@@ -935,7 +936,84 @@ h2 {
 
 }
 
+/* Mobile-First Media Queries */
+@media screen and (max-width: 768px) {
+
+  .nav-logo {
+    display: block;
+  }
+
+  .nav-container {
+    padding: 10px;
+  }
+
+  .nav-links {
+    gap: 10px;
+  }
+
+  .nav-links li {
+    margin-left: 10px;
+  }
+
+  .wrapper {
+    width: 95%;
+    padding: 10px;
+  }
+
+  .container {
+    width: 95vw;
+  }
+
+  .card {
+    max-width: 100%;
+    right: 0;
+  }
+
+  .business-card {
+    width: 100%;
+    max-width: 350px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+
+  .nav-logo {
+    display: none;
+  }
+
+  h1 {
+    font-size: 1em;
+  }
+
+  h2 {
+    font-size: 1.1em;
+  }
+
+  p {
+    font-size: 1.2em;
+  }
+
+  span {
+    font-size: 0.9em;
+    margin-right: 8px;
+    margin-bottom: 6px;
+  }
+
+  .nav-container {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .nav-links {
+    justify-content: center;
+  }
+}
+
 @media screen and (min-width: 800px) {
+  .nav-logo {
+      display: block;
+  }
+
   html {
     font-size: 12px;
   }
@@ -990,6 +1068,11 @@ h2 {
 }
 
 @media screen and (min-width: 1100px) {
+
+  .nav-logo {
+      display: block;
+  }
+
   html {
     font-size: 14px;
   }
@@ -1084,3 +1167,4 @@ h2 {
       font-size: 1.5em;
     }
   }
+
