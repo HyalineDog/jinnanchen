@@ -246,3 +246,13 @@ window.addEventListener('popstate', function(event) {
         }
     }
 });
+
+
+document.addEventListener('DOMContentLoaded', function () {
+    const selectedClass = selectedOption.classList[2] || 'all';
+
+    // Add a slight delay before dealing cards
+    setTimeout(() => {
+        dealCards(selectedClass);
+    }, 500); // 500ms delay
+});

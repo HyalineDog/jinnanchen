@@ -235,8 +235,8 @@ p {
 
 .search {
   width: 100%;
+  height: auto;
   padding: 5px 0;
-  border-bottom: 3px solid black;
   display: flex;
   justify-content: space-between;
   align-items: center;
