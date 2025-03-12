@@ -226,7 +226,25 @@ dealtCardsContainer.addEventListener('click', function (e) {
                 overlay.addEventListener('click', function () {
                     clickedCard.classList.remove('enlarged');
                     overlay.remove();
+                    const closeButton = document.querySelector('.close-button');
+                    if (closeButton) {
+                        closeButton.remove();
+                    }
                 });
+
+                // Create a close button for mobile devices
+                const closeButton = document.createElement('button');
+                closeButton.classList.add('close-button');
+                closeButton.innerHTML = '&times;';
+                closeButton.style.display = 'block'; // Ensure the button is visible
+                closeButton.style.position = 'fixed'; // Fix position in viewport
+                closeButton.style.zIndex = '1001'; // Ensure it's above the overlay
+                closeButton.addEventListener('click', function() {
+                    clickedCard.classList.remove('enlarged');
+                    overlay.remove();
+                    closeButton.remove();
+                });
+                document.body.appendChild(closeButton);
 
                 // Push a new state to the browser history
                 history.pushState({cardEnlarged: true}, '');
@@ -243,6 +261,10 @@ window.addEventListener('popstate', function(event) {
         const overlay = document.querySelector('.overlay');
         if (overlay) {
             overlay.remove();
+        }
+        const closeButton = document.querySelector('.close-button');
+        if (closeButton) {
+            closeButton.remove();
         }
     }
 });

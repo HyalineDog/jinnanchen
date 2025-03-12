@@ -101,14 +101,16 @@ li {
   grid-template-columns: 1fr;
   gap: 20px;
   align-items: center;
-  margin: 5em 0 0 0;
+  margin: 5em auto 0;
   justify-items: center;
+  max-width: 1400px;
 }
 
 main {
   display: flex;
   justify-content: center;
   align-items: center;
+  width: 100%;
 }
 
 .container {
@@ -119,6 +121,7 @@ main {
   width: 90vw;
   justify-content: center;
   align-items: center;
+  margin: 0 auto;
 }
 
 /* Typography */
@@ -178,7 +181,7 @@ p {
 .card {
   grid-column: 1;
   grid-row-start: 1;
-  display: none;
+  display: flex;
   align-items: center;
   flex-direction: column;
   flex-shrink: 0;
@@ -190,7 +193,7 @@ p {
   position: relative;
   width: 1fr;
   max-width: 400px;
-  right: 10px;
+  margin-left: auto;
   top: 45%;
   transform: translateY(-50%);
   transition: transform 1s;
@@ -220,12 +223,13 @@ p {
   grid-column: 1;
   grid-row: 2 / span 5;
   display: grid;
-  justify-content: center;
+  justify-content: end;
   align-items: center;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  column-gap: 12vh;
-  row-gap: 3vh;
-  margin: 0 10vh;
+  grid-template-columns: repeat(auto-fit, minmax(222px, 1fr));
+  column-gap: 25vh;
+  row-gap: 5vh;
+  margin: 0 auto;
+  max-width: 1200px;
 }
 
 /* Search and Dropdown Styles */
@@ -330,21 +334,25 @@ p {
 .portfolio-cards {
   display: none;
   flex-wrap: wrap;
-  height: 300px;
+  width: 222px;
+  height: 291px;
   background-color: #fff;
   border-radius: 10px;
   box-shadow: 4px 2px 5px rgba(0, 0, 0, 0.2);
   padding: 20px;
   transition: transform 1s;
   margin-bottom: 20px;
-  /* text-align: center; */
   cursor: pointer;
+  aspect-ratio: 222/291;
 }
 
 .dealt-card {
   opacity: 0;
   transition: opacity 0.5s ease-in-out, transform 0.5s ease-out;
   background: white;
+  width: 222px;
+  height: 291px;
+  aspect-ratio: 222/291;
 }
 
 .dealt-card.in-slot {
@@ -411,18 +419,26 @@ p {
 
 /* Enlarged Portfolio Card Styles */
 .portfolio-cards.enlarged {
-  position: fixed;
-  height: 83vh;
-  width: 30%;
+  position: fixed !important;
+  top: 50% !important;
+  left: 50% !important;
+  transform: translate(-50%, -50%) !important;
+  width: min(700px, 90vw);
+  height: calc(min(700px, 90vw) * (291/222));
   min-width: 350px;
-  max-width: 700px;
-  left: calc(50% - 200px);
-  top: 5%;
+  min-height: calc(350px * (291/222));
+  max-height: 90vh;
   z-index: 9999;
   overflow: auto;
   cursor: auto;
   text-align: left;
   padding: 30px;
+  box-sizing: border-box;
+}
+
+/* Ensure close button is visible when cards are enlarged */
+.portfolio-cards.enlarged + .close-button {
+  display: block;
 }
 
 .portfolio-cards.enlarged::before {
@@ -855,316 +871,148 @@ h2 {
 
 /* Responsive Styles */
 
+/* Close button for enlarged cards */
+.close-button {
+  display: none;
+  position: fixed;
+  top: 15px;
+  right: 15px;
+  width: 40px;
+  height: 40px;
+  background-color: rgba(0, 0, 0, 0.6);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  font-size: 24px;
+  cursor: pointer;
+  z-index: 100000;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  transition: background-color 0.3s ease;
+  display: flex;
+  justify-content: center !important;
+  align-items: center !important;
+}
+
+.close-button:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+  cursor: pointer;
+}
+
 @media screen and (max-width: 800px) {
-
-  /* Disable card dealing animation */
-  .portfolio-cards {
-    transition: none;
-    animation: none;
-  }
-
-  /* Disable card tilting effect */
-  .portfolio-cards:hover {
-    transform: none;
-    box-shadow: none;
-    scale: none;
-  }
-
-  /* Disable hover effects */
-  .portfolio-cards:hover .preview {
-    filter: none;
-    -webkit-filter: none;
-  }
-
   /* Adjust the enlarged card styles for mobile */
   .portfolio-cards.enlarged {
     position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
+    top: 50%;
+    left: 50%;
+    width: 70%;
     height: 100%;
-    max-width: 800px;
-    min-width: none;
+    max-width: 100%;
+    min-width: auto;
+    transform: translate(-50%, -50%);
     overflow-y: auto;
-    padding: 20px;
+    padding: 20px 20px 60px 20px;
     box-sizing: border-box;
   }
-}
 
-@media screen and (min-width: 600px) {
-  html {
-    font-size: 12px;
-  }
-
-  .container {
-    grid-column: 1 / span 2;
-    width: 80vw;
-  }
-
-  #dealtCardsContainer {
-    grid-template-columns: repeat(2, 260px);
-  }
-
-  .drop_down_icon {
-    right: 1em;
-    width: 40px;
-    height: 40px;
-  }
-
-  .portfolio-cards.enlarged {
-    width: 30%;
-  }
-
-  .search{
-    width: 80%;
-  }
-
-  .search-container {
-    width: 95vw;
-  }
-  .drop-down-options {
-    width: 75vw;
-  }
-
-  h2 {
-    font-size: 3em;
-  }
-
-  h1 {
-    font-size: 2em;
-  }
-
-}
-
-/* Mobile-First Media Queries */
-@media screen and (max-width: 768px) {
-
-  .nav-logo {
+  /* Show close button on mobile */
+  .close-button {
     display: block;
+    top: 15px;
+    right: 15px;
+    z-index: 10001;
+    position: fixed;
   }
-
-  .nav-container {
-    padding: 10px;
-  }
-
-  .nav-links {
-    gap: 10px;
-  }
-
-  .nav-links li {
-    margin-left: 10px;
-  }
-
-  .wrapper {
-    width: 95%;
-    padding: 10px;
-  }
-
-  .container {
-    width: 95vw;
-  }
-
-  .card {
-    max-width: 100%;
-    right: 0;
-  }
-
-  .business-card {
-    width: 100%;
-    max-width: 350px;
-  }
-}
-
-@media screen and (max-width: 480px) {
-
-  .nav-logo {
-    display: none;
-  }
-
-  h1 {
-    font-size: 1em;
-  }
-
-  h2 {
-    font-size: 1.1em;
-  }
-
-  p {
-    font-size: 1.2em;
-  }
-
-  span {
-    font-size: 0.9em;
-    margin-right: 8px;
-    margin-bottom: 6px;
-  }
-
-  .nav-container {
-    flex-direction: column;
-    gap: 10px;
-  }
-
-  .nav-links {
+  
+  /* Improve grid layout on mobile */
+  #dealtCardsContainer {
+    grid-template-columns: repeat(1, 222px);
+    gap: 30px;
+    margin: 0 auto;
     justify-content: center;
   }
 }
 
-@media screen and (min-width: 800px) {
-  .nav-logo {
-      display: block;
-  }
-
-  html {
-    font-size: 12px;
-  }
-
-  .wrapper {
-    grid-template-columns: 1fr 1fr;
-  }
-
-  .container {
-    grid-column: 1 / span 2;
-    width: 80vw;
-  }
-
-  #dealtCardsContainer {
-    grid-template-columns: repeat(2, 260px);
-    margin-top: 20px;
-  }
-
-  .drop_down_icon {
-    right: 1em;
-    width: 40px;
-    height: 40px;
-  }
-
-  .portfolio-cards.enlarged {
-    width: 30%;
-  }
-
-  .search{
-    width: 80%;
-  }
-
-  .flex-col-3-search {
-    padding: 5px 0;
-  }
-
-  .search-container {
-    width: 95vw;
-  }
-  .drop-down-options {
-    width: 75vw;
-  }
-
-  h2 {
-    font-size: 3em;
-  }
-
-  h1 {
-    font-size: 2em;
-  }
-
-}
-
-@media screen and (min-width: 1100px) {
-
-  .nav-logo {
-      display: block;
-  }
-
-  html {
-    font-size: 14px;
-  }
-
-  .search {
-    width: 100%;
-    max-width: 630px;
-  }
-
-  .search-container {
-    width: 50vw;
-    min-width: 630px;
-  }
-
-  .drop-down-options {
-    width: 50vw;
-  }
-
+@media screen and (max-width: 480px) {
+  /* Hide original card on mobile */
   .card {
-    display: flex;
-    grid-column: 1;
-    grid-row-start: 1;
-    max-width: 250px;
-    left: 40vw;
-    top: 45%;
-    transform: translateY(-50%);
-    column-gap: 0.1vh;
-    row-gap: 0.1vh;
+    display: none;
   }
-
+  /* Ensure the close button is easily tappable and visible */
+  .close-button {
+    width: 44px;
+    height: 44px;
+    font-size: 28px;
+    line-height: 44px;
+    top: 15px;
+    right: 15px;
+    position: fixed;
+    z-index: 10001;
+  }
+  
+  /* Improve mobile grid layout */
   #dealtCardsContainer {
-    grid-template-columns: repeat(3, 260px);
-    align-items: center;
+    grid-template-columns: repeat(auto-fit, 222px);
+    gap: 20px;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 100%;
+    justify-content: center;
+    padding: 0 10px;
   }
-
-  .wrapper {
-    align-items: center;
-    align-self: center;
-    align-content: center;
+  
+  /* Make cards more visible on mobile */
+  .dealt-card {
+    width: 222px;
+    height: 291px;
+    margin-bottom: 15px;
+    aspect-ratio: 222/291;
   }
-
+  
+  /* Ensure enlarged cards are properly positioned on small screens */
   .portfolio-cards.enlarged {
-    left: calc(50% - 14vw);
+    padding: 15px 15px 60px 15px;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
   }
+}
 
+@media screen and (min-width: 800px) {
+  #dealtCardsContainer {
+    grid-template-columns: repeat(2, 222px);
+    column-gap: 80px;
+    row-gap: 40px;
+    margin: 20px auto 0;
+    justify-content: center;
+  }
 }
 
 @media screen and (min-width: 1100px) {
-    html {
-      font-size: 16px;
-    }
-
-    .container {
-      grid-column: 1 / span 3;
-      width: 40vw;
-    }
-
-    .card {
-      display: flex;
-      grid-column: 4;
-      grid-row-start: 1;
-      max-width: 300px;
-      right: 10px;
-      left: 0;
-      top: 45%;
-      transform: translateY(-50%);
-    }
-
-    #dealtCardsContainer {
-      grid-template-columns: repeat(3, 260px);
-      grid-column: 1 / span 5;
-      left: calc(50% - 14vw);
-    }
-
-    .portfolio-cards.enlarged {
-      width: 30%;
-      left: calc(50% - 14vw);
-    }
-
-    .drop-down-options {
-      width: 830px;
-    }
-
-    .search {
-      width: 830px;
-    }
-
-    h2{
-      font-size: 2.5em;
-    }
-    h1{
-      font-size: 1.5em;
-    }
+  #dealtCardsContainer {
+    grid-template-columns: repeat(3, 222px);
+    column-gap: 100px;
+    row-gap: 50px;
+    grid-column: 1 / span 5;
+    margin: 0 auto;
+    justify-content: center;
   }
+
+  .portfolio-cards.enlarged {
+    width: 40%;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    max-height: 90vh;
+    padding: 30px;
+    overflow-y: auto;
+  }
+  
+  /* Ensure close button is properly positioned on larger screens */
+  .close-button {
+    top: 20px;
+    right: 20px;
+  }
+}
 
